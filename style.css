@@ -508,6 +508,50 @@ img {
     margin-top: 50px;
 }
 
+.pricing-grid-two {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 700px) {
+    .pricing-grid-two {
+        grid-template-columns: 1fr;
+    }
+}
+
+.package-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.package-note {
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    margin: 0 0 8px;
+    line-height: 1.5;
+}
+
+.final-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.final-cta-buttons .btn {
+    flex: 1 1 220px;
+    text-align: center;
+}
+
 .pricing-card {
     background: var(--bg-card);
     padding: 40px;
@@ -722,76 +766,4 @@ footer {
     .hero-cta {
         flex-direction: column;
     }
-}
-
-/* MailerLite Form Overrides */
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper {
-    background-color: transparent !important;
-    padding: 0 !important;
-    max-width: 600px !important;
-    margin: 0 auto !important;
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
-    padding: 0 !important;
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
-    color: var(--primary-color) !important;
-    font-family: var(--font-heading) !important;
-    font-size: 2rem !important;
-    text-align: center !important;
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
-    color: var(--text-grey) !important;
-    font-family: var(--font-body) !important;
-    text-align: center !important;
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    color: var(--text-light) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 4px !important;
-    font-family: var(--font-body) !important;
-    padding: 15px !important;
-    height: auto !important;
-    transition: var(--transition);
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
-    border-color: var(--primary-color) !important;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-    background: linear-gradient(135deg, var(--primary-color), #b8860b) !important;
-    color: #000 !important;
-    font-family: var(--font-heading) !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 16px 32px !important;
-    border: none !important;
-    border-radius: 4px !important;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2) !important;
-}
-
-#mlb2-34213836.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::placeholder {
-    color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.ml-form-fieldRow {
-    margin-bottom: 20px !important;
 }
