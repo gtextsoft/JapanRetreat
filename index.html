@@ -7,6 +7,11 @@
     <title>Japan Business Retreat 2026 | Dr. Stephen Akintayo</title>
     <meta name="description"
         content="A 7-Day Luxury Business & Investment Experience in Tokyo, Kyoto & Osaka hosted by Dr. Stephen Akintayo. Join elite founders for strategy, innovation, and culture.">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta property="og:title" content="Japan Business Retreat 2026 | Dr. Stephen Akintayo">
+    <meta property="og:description"
+        content="7 days in Tokyo, Kyoto & Osaka — strategy, investment insight, and elite networking. Limited to 25 seats.">
+    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +26,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
+
+    <a class="skip-link" href="#pricing">Skip to pricing</a>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="container nav-container">
-            <a href="#" class="logo">Japan<span>Retreat</span></a>
-            <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+            <a href="#top" class="logo">Japan<span>Retreat</span></a>
+            <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Open menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
@@ -36,7 +43,8 @@
                 <li><a href="#itinerary">Itinerary</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#host">Host</a></li>
-                <li><a href="#pricing" class="btn btn-primary" style="padding: 10px 20px;">Reserve</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#pricing" class="btn btn-primary btn-nav-cta">Reserve your spot</a></li>
             </ul>
         </div>
     </nav>
@@ -51,18 +59,25 @@
                 sessions, curated business tours, and unforgettable cultural immersion.</p>
 
             <div class="hero-benefits">
-                <div class="benefit-item"><i class="fas fa-check-circle"></i> Global Dominance Principles</div>
-                <div class="benefit-item"><i class="fas fa-check-circle"></i> Private Strategy Sessions</div>
-                <div class="benefit-item"><i class="fas fa-check-circle"></i> Elite Networking</div>
-                <div class="benefit-item"><i class="fas fa-check-circle"></i> Innovation Hubs</div>
+                <div class="benefit-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Execution &amp; leadership systems</div>
+                <div class="benefit-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Private strategy &amp; masterminds</div>
+                <div class="benefit-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Founder &amp; investor network</div>
+                <div class="benefit-item"><i class="fas fa-check-circle" aria-hidden="true"></i> Innovation &amp; culture immersion</div>
             </div>
 
             <div class="hero-cta">
-                <a href="#pricing" class="btn btn-primary">View pricing & reserve</a>
+                <a href="#pricing" class="btn btn-primary">Reserve your spot</a>
+                <a href="#itinerary" class="btn btn-secondary btn-hero-outline">See the itinerary</a>
+            </div>
+
+            <div class="hero-trust-strip" aria-label="Retreat highlights">
+                <span class="hero-trust-item"><i class="fas fa-lock" aria-hidden="true"></i> Secure checkout (Stripe)</span>
+                <span class="hero-trust-item"><i class="fas fa-users" aria-hidden="true"></i> Limited to 25 guests</span>
+                <span class="hero-trust-item"><i class="fas fa-crown" aria-hidden="true"></i> Hosted by Dr. Stephen Akintayo</span>
             </div>
 
             <div class="trust-indicators">
-                Limited to 25 participants • Premium experience
+                Tokyo · Kyoto · Osaka · 7 days · Application-quality cohort
             </div>
         </div>
     </header>
@@ -133,6 +148,7 @@
         <div class="container">
             <div class="text-center animate-on-scroll">
                 <h2 class="section-title">What You’ll <span>Leave With</span></h2>
+                <p class="section-lead">Tangible outcomes — not inspiration without a plan.</p>
             </div>
 
             <div class="outcome-grid">
@@ -252,39 +268,45 @@
         <div class="container">
             <div class="text-center animate-on-scroll">
                 <h2 class="section-title">Choose Your <span>Experience</span></h2>
-                <p class="text-grey">Two options shared room or single room with added support.</p>
+                <p class="section-lead">Two clear tiers pick shared accommodation or upgrade to a private room with visa support and concierge help.</p>
+                <p class="pricing-urgency"><i class="fas fa-bolt" aria-hidden="true"></i> Small cohort seats are allocated in order of booking.</p>
             </div>
 
             <div class="pricing-grid pricing-grid-two">
                 <div class="pricing-card animate-on-scroll delay-100">
+                    <span class="pricing-tier-label">Essential</span>
                     <h3 class="package-name">Shared bed</h3>
-                    <p class="package-price">$12,500</p>
-                    <p class="package-note">Full retreat access, luxury shared accommodation, and all core inclusions.</p>
+                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$12,500</span></p>
+                    <p class="package-note">Full retreat access, luxury shared accommodation, and every group inclusion.</p>
                     <ul class="package-features">
-                        <li>7‑day curated program & group sessions</li>
-                        <li>Shared luxury accommodation</li>
-                        <li>Breakfast, selected dinners & group transport</li>
-                        <li>Business tours, culture & mastermind sessions</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>7‑day program, masterminds &amp; strategy sessions</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Shared luxury room (twin / shared arrangement)</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Breakfast, selected dinners &amp; all group transport</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Business tours, culture &amp; networking</span></li>
+                        <li><i class="fas fa-passport" aria-hidden="true"></i><span>Visa guidance resources (you handle embassy fees)</span></li>
                     </ul>
-                    <a href="https://buy.stripe.com/bJe00k9B23vp68C9Riew802" class="btn btn-secondary" style="width: 100%;"
-                        rel="noopener noreferrer" target="_blank">Pay securely with Stripe</a>
+                    <a href="https://buy.stripe.com/bJe00k9B23vp68C9Riew802" class="btn btn-secondary btn-pricing-main"
+                        rel="noopener noreferrer" target="_blank"
+                        aria-label="Book shared bed retreat for 12,500 US dollars">Book shared experience</a>
+                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe · Cards &amp; more</p>
                 </div>
 
                 <div class="pricing-card featured animate-on-scroll delay-200">
-                    <div
-                        style="position: absolute; top: 0; left: 0; width: 100%; background: var(--primary-color); color: #000; font-size: 0.8rem; font-weight: 700; padding: 5px 0; text-transform: uppercase;">
-                        Most Popular</div>
-                    <h3 class="package-name" style="margin-top: 20px;">Single bed</h3>
-                    <p class="package-price">$15,000</p>
-                    <p class="package-note">Private room plus visa support and more — our premium tier.</p>
+                    <div class="pricing-ribbon">Best value</div>
+                    <span class="pricing-tier-label">Premium</span>
+                    <h3 class="package-name">Single bed</h3>
+                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$15,000</span></p>
+                    <p class="package-note">Private room plus hands-on visa support and elevated concierge service.</p>
                     <ul class="package-features">
-                        <li><strong>Everything in shared bed</strong></li>
-                        <li>Single occupancy (private room)</li>
-                        <li>Visa support & guidance</li>
-                        <li>Additional concierge-level support</li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span><strong>Everything in Shared bed</strong></span></li>
+                        <li><i class="fas fa-bed" aria-hidden="true"></i><span>Private room — single occupancy</span></li>
+                        <li><i class="fas fa-passport" aria-hidden="true"></i><span>Visa support &amp; documentation guidance</span></li>
+                        <li><i class="fas fa-bell-concierge" aria-hidden="true"></i><span>Concierge-level support before &amp; during the trip</span></li>
                     </ul>
-                    <a href="https://buy.stripe.com/7sYeVe00sd5ZdB45B2ew803" class="btn btn-primary" style="width: 100%;"
-                        rel="noopener noreferrer" target="_blank">Pay securely with Stripe</a>
+                    <a href="https://buy.stripe.com/7sYeVe00sd5ZdB45B2ew803" class="btn btn-primary btn-pricing-main"
+                        rel="noopener noreferrer" target="_blank"
+                        aria-label="Book single bed retreat for 15,000 US dollars">Book single experience</a>
+                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe · Cards &amp; more</p>
                 </div>
             </div>
         </div>
@@ -322,6 +344,7 @@
         <div class="container">
             <div class="text-center animate-on-scroll">
                 <h2 class="section-title">What Past <span>Participants Say</span></h2>
+                <p class="section-lead">Social proof from founders and investors who’ve joined our programs.</p>
             </div>
 
             <div class="testimonial-grid">
@@ -346,17 +369,19 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq section-padding">
+    <section id="faq" class="faq section-padding">
         <div class="container">
             <div class="text-center animate-on-scroll">
                 <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+                <p class="section-lead">Straight answers on visas, travel, and how booking works.</p>
             </div>
 
             <div class="faq-container animate-on-scroll">
                 <div class="faq-item">
                     <div class="faq-question">Do I need a visa to enter Japan? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Yes, most participants will require a visa. Once accepted, our team will
-                        provide a guidance pack and support.</div>
+                    <div class="faq-answer">Most international guests need a visa. Shared bed includes guidance resources;
+                        the Single bed package adds hands-on visa support. Government and embassy fees are paid by you
+                        where applicable.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do I book? <i class="fas fa-chevron-down"></i></div>
@@ -384,20 +409,19 @@
     </section>
 
     <!-- Final CTA -->
-    <section id="apply" class="section-padding" style="background: var(--bg-card); text-align: center;">
+    <section id="apply" class="final-cta section-padding">
         <div class="container animate-on-scroll">
-            <h2 class="section-title">This Is Your Invitation to <span>Think Bigger.</span></h2>
-            <p style="max-width: 600px; margin: 0 auto 30px;">If you feel the pull toward global expansion, disciplined
-                growth, and a stronger investment mindset, Japan will change how you operate.</p>
+            <h2 class="section-title">Ready to <span>Reserve Your Seat?</span></h2>
+            <p class="final-cta-lead">Japan rewards those who show up with intent. Choose your tier and complete secure checkout in minutes.</p>
 
             <div class="final-cta-buttons">
                 <a href="https://buy.stripe.com/bJe00k9B23vp68C9Riew802" class="btn btn-secondary" rel="noopener noreferrer"
-                    target="_blank">Shared bed — $12,500</a>
+                    target="_blank">Book shared — $12,500</a>
                 <a href="https://buy.stripe.com/7sYeVe00sd5ZdB45B2ew803" class="btn btn-primary" rel="noopener noreferrer"
-                    target="_blank">Single bed — $15,000</a>
+                    target="_blank">Book single — $15,000</a>
             </div>
 
-            <p class="text-gold" style="margin-top: 28px; font-weight: 600;">Seats are limited to 25 participants.</p>
+            <p class="final-cta-footnote"><i class="fas fa-users" aria-hidden="true"></i> Capped at 25 participants · <i class="fas fa-lock" aria-hidden="true"></i> Powered by Stripe</p>
         </div>
     </section>
 
@@ -406,7 +430,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="#" class="logo">Japan<span>Retreat</span></a>
+                    <a href="#top" class="logo">Japan<span>Retreat</span></a>
                     <p style="margin-top: 20px; color: var(--text-grey);">A luxury business & investment experience
                         hosted by Dr. Stephen Akintayo.</p>
                 </div>
@@ -421,6 +445,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#itinerary">Itinerary</a></li>
                         <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#apply">Reserve</a></li>
                     </ul>
                 </div>
