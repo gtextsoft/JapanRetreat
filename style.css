@@ -23,6 +23,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -102,6 +103,7 @@ ul {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -134,6 +136,8 @@ img {
     cursor: pointer;
     transition: var(--transition);
     border: 1px solid transparent;
+    text-align: center;
+    line-height: 1.3;
 }
 
 .btn-primary {
@@ -262,20 +266,27 @@ img {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    flex-shrink: 0;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100dvh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('images/hero-bg.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    padding: 110px 0 56px;
 }
 
 .hero-content {
@@ -447,7 +458,7 @@ img {
 
 .who-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 30px;
     margin-top: 50px;
 }
@@ -482,12 +493,12 @@ img {
 .outcomes {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('images/strategy-session.png');
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
 }
 
 .outcome-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
     gap: 30px;
     margin-top: 50px;
 }
@@ -612,25 +623,31 @@ img {
     margin-top: 50px;
 }
 
-.pricing-grid-two {
-    max-width: 900px;
+.pricing-grid-four {
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
 }
 
-@media (max-width: 700px) {
-    .pricing-grid-two {
-        grid-template-columns: 1fr;
-    }
+.pricing-grid-four .pricing-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+}
 
-    .pricing-card.featured {
-        transform: none;
-    }
+.pricing-grid-four .package-features {
+    flex: 1;
+}
 
-    .pricing-card.featured:hover {
-        transform: translateY(-6px);
-    }
+.pricing-grid-four .pricing-card.featured {
+    transform: none;
+}
+
+.pricing-grid-four .pricing-card.featured:hover {
+    transform: translateY(-10px);
 }
 
 .package-price {
@@ -727,18 +744,16 @@ img {
     color: rgba(212, 175, 55, 0.7);
 }
 
-.final-cta-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-    align-items: center;
-    max-width: 560px;
+.final-cta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
-.final-cta-buttons .btn {
-    flex: 1 1 220px;
+.final-cta-grid .btn {
+    width: 100%;
     text-align: center;
 }
 
@@ -845,12 +860,12 @@ img {
 .testimonials {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/testimonial-bg.png');
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
 }
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 30px;
     margin-top: 50px;
 }
@@ -943,7 +958,7 @@ img {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 640px;
+    max-height: 2000px;
     padding-bottom: 20px;
 }
 
@@ -960,7 +975,7 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 40px;
     margin-bottom: 60px;
 }
@@ -1009,7 +1024,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .nav-links {
         gap: 16px;
     }
@@ -1017,20 +1032,19 @@ footer {
     .nav-links a:not(.btn-primary) {
         font-size: 0.8rem;
     }
-}
 
-@media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3.1rem;
     }
 
     .section-title {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
+}
 
-    .need-to-know {
-        padding: 22px 20px;
-        margin-bottom: 32px;
+@media (max-width: 900px) {
+    .section-padding {
+        padding: 72px 0;
     }
 
     .nav-links {
@@ -1039,24 +1053,177 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background: var(--bg-dark);
+        background: rgba(10, 10, 10, 0.98);
         flex-direction: column;
-        padding: 20px;
+        gap: 4px;
+        padding: 12px 20px 24px;
         text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+        z-index: 1001;
     }
 
     .nav-links.active {
         display: flex;
     }
 
-    .mobile-menu-btn {
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
         display: block;
+        padding: 12px 8px;
+        font-size: 0.95rem;
+    }
+
+    .nav-links .btn-nav-cta {
+        width: 100%;
+        margin-top: 8px;
+        padding: 14px 18px !important;
+        font-size: 0.85rem;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .pricing-grid-four {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        gap: 20px;
+    }
+
+    .pricing-grid-four .pricing-card {
+        padding: 28px 20px;
     }
 
     .about-grid,
     .host-grid,
     .included-grid {
         grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .about-image::before {
+        top: -12px;
+        left: 0;
+    }
+
+    .final-cta-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero {
+        min-height: 100svh;
+        padding: 96px 0 48px;
+        align-items: flex-start;
+    }
+
+    .hero-subtitle {
+        font-size: 0.78rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+        line-height: 1.4;
+    }
+
+    .hero h1 {
+        font-size: 2.05rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-date {
+        font-size: 0.78rem;
+        padding: 8px 12px;
+        margin-bottom: 18px;
+        letter-spacing: 0.04em;
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-micro {
+        font-size: 1rem;
+        margin-bottom: 28px;
+        line-height: 1.6;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .trust-indicators {
+        font-size: 0.75rem;
+        padding: 0 8px;
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+        margin-bottom: 20px;
+    }
+
+    .section-lead {
+        font-size: 0.98rem;
+        margin-bottom: 24px;
+    }
+
+    .need-to-know {
+        padding: 20px 16px;
+        margin-bottom: 28px;
+    }
+
+    .who-card,
+    .not-for {
+        padding: 24px 20px;
+    }
+
+    .not-for {
+        margin-top: 36px;
+    }
+
+    .package-name {
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .package-amount {
+        font-size: 2rem;
+    }
+
+    .package-diff,
+    .package-note {
+        max-width: none;
+        font-size: 0.88rem;
+    }
+
+    .package-features li {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .btn-pricing-main {
+        font-size: 0.72rem;
+        letter-spacing: 0.4px;
+        padding: 14px 10px;
+        white-space: normal;
     }
 
     .timeline::before {
@@ -1068,16 +1235,19 @@ footer {
         padding-left: 50px;
         padding-right: 0;
         text-align: left;
+        margin-bottom: 36px;
     }
 
     .timeline-item:nth-child(odd) {
         left: 0;
         text-align: left;
         padding-left: 50px;
+        padding-right: 0;
     }
 
     .timeline-item:nth-child(even) {
         left: 0;
+        padding-left: 50px;
     }
 
     .timeline-dot {
@@ -1085,7 +1255,87 @@ footer {
         right: auto !important;
     }
 
-    .hero-cta {
-        flex-direction: column;
+    .day-title {
+        font-size: 1.05rem;
+    }
+
+    .faq-question {
+        padding: 16px 0;
+        gap: 12px;
+        font-size: 0.95rem;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .faq-question i {
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+
+    .final-cta-lead {
+        font-size: 1rem;
+        padding: 0 8px;
+    }
+
+    .final-cta-grid .btn {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        padding: 14px 12px;
+        white-space: normal;
+    }
+
+    .final-cta-footnote {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        padding: 0 8px;
+    }
+
+    footer {
+        padding: 56px 0 28px;
+    }
+
+    .footer-grid {
+        gap: 28px;
+        margin-bottom: 36px;
+    }
+
+    .footer-bottom {
+        padding-top: 24px;
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .section-padding {
+        padding: 56px 0;
+    }
+
+    .pricing-grid-four .pricing-card.featured {
+        padding-top: 44px;
+    }
+}
+
+@media (max-width: 768px) and (hover: none) {
+    .pricing-card:hover,
+    .pricing-card.featured:hover,
+    .pricing-grid-four .pricing-card.featured:hover,
+    .who-card:hover,
+    .btn-primary:hover {
+        transform: none;
+        box-shadow: none;
     }
 }

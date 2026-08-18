@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!navLinks) return;
         navLinks.classList.remove('active');
         if (mobileBtn) {
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            mobileBtn.setAttribute('aria-label', 'Open menu');
             const icon = mobileBtn.querySelector('i');
             if (icon) {
                 icon.classList.remove('fa-times');
@@ -18,9 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleMobileMenu = () => {
         if (!navLinks || !mobileBtn) return;
         navLinks.classList.toggle('active');
+        const isOpen = navLinks.classList.contains('active');
+        mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        mobileBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         const icon = mobileBtn.querySelector('i');
         if (!icon) return;
-        if (navLinks.classList.contains('active')) {
+        if (isOpen) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
         } else {

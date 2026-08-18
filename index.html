@@ -34,10 +34,10 @@
     <nav class="navbar" aria-label="Primary">
         <div class="container nav-container">
             <a href="#top" class="logo">Japan<span>Retreat</span></a>
-            <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Open menu">
+            <div class="mobile-menu-btn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="site-nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#outcomes">Outcomes</a></li>
                 <li><a href="#itinerary">Itinerary</a></li>
@@ -225,7 +225,7 @@
                     <h2 class="section-title">What’s <span>Included</span></h2>
                     <ul class="included-list">
                         <li><i class="fas fa-check"></i> 7‑day curated retreat program</li>
-                        <li><i class="fas fa-check"></i> Luxury accommodation (Shared or Private Room, per package)</li>
+                        <li><i class="fas fa-check"></i> Luxury accommodation on Shared Room &amp; Private Room packages</li>
                         <li><i class="fas fa-check"></i> Daily breakfast + selected group dinners</li>
                         <li><i class="fas fa-check"></i> Bullet train transfers between cities</li>
                         <li><i class="fas fa-check"></i> All group transportation in Japan</li>
@@ -238,6 +238,7 @@
                     <h2 class="section-title">Not <span>Included</span></h2>
                     <ul class="not-included-list included-list">
                         <li><i class="fas fa-times"></i> International flights to/from Japan</li>
+                        <li><i class="fas fa-times"></i> Hotel on Program Only packages (you arrange your own stay)</li>
                         <li><i class="fas fa-times"></i> Visa processing fees</li>
                         <li><i class="fas fa-times"></i> Personal expenses</li>
                         <li><i class="fas fa-times"></i> Travel insurance (mandatory)</li>
@@ -256,18 +257,54 @@
         <div class="container">
             <div class="text-center animate-on-scroll">
                 <h2 class="section-title">Choose Your <span>Experience</span></h2>
-                <p class="section-lead">Two tiers for the Billionaire Habits Retreat — Japan Edition (24th – 30th Nov 2026).
-                    Same 7‑day program. Choose shared accommodation, or upgrade to a private room with visa support and concierge help.</p>
+                <p class="section-lead">Four packages for the Billionaire Habits Retreat — Japan Edition (24th – 30th Nov 2026).
+                    Same 7‑day program. Choose program-only, or add luxury accommodation.</p>
                 <p class="pricing-urgency"><i class="fas fa-bolt" aria-hidden="true"></i> Only 25 seats — allocated in order of booking.</p>
             </div>
 
-            <div class="pricing-grid pricing-grid-two">
+            <div class="pricing-grid pricing-grid-four">
+                <div class="pricing-card animate-on-scroll delay-100">
+                    <span class="pricing-tier-label">Access</span>
+                    <h3 class="package-name">Program Only</h3>
+                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$3,000</span></p>
+                    <p class="package-diff">Full program · You arrange your own stay</p>
+                    <p class="package-note">Sessions, tours, and masterminds — without hotel.</p>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>7‑day program, masterminds &amp; strategy sessions</span></li>
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span>Business tours, culture &amp; networking</span></li>
+                        <li><i class="fas fa-passport" aria-hidden="true"></i><span>Visa guidance resources (you handle embassy fees)</span></li>
+                        <li><i class="fas fa-hotel" aria-hidden="true"></i><span>Accommodation not included — you book your own stay</span></li>
+                    </ul>
+                    <a href="https://buy.stripe.com/fZu7sM5kMaXRcx01kMew80B" class="btn btn-secondary btn-pricing-main"
+                        rel="noopener noreferrer" target="_blank"
+                        aria-label="Book Program Only retreat for 3,000 US dollars">Book Program — $3,000</a>
+                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe</p>
+                </div>
+
+                <div class="pricing-card animate-on-scroll delay-200">
+                    <span class="pricing-tier-label">Access+</span>
+                    <h3 class="package-name">Program + Concierge</h3>
+                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$4,000</span></p>
+                    <p class="package-diff">Full program · Visa support · Concierge · Own stay</p>
+                    <p class="package-note">Program access plus hands‑on support. Hotel not included.</p>
+                    <ul class="package-features">
+                        <li><i class="fas fa-check" aria-hidden="true"></i><span><strong>Everything in Program Only</strong></span></li>
+                        <li><i class="fas fa-passport" aria-hidden="true"></i><span>Visa support &amp; documentation guidance</span></li>
+                        <li><i class="fas fa-bell-concierge" aria-hidden="true"></i><span>Concierge-level support before &amp; during the trip</span></li>
+                        <li><i class="fas fa-hotel" aria-hidden="true"></i><span>Accommodation not included — you book your own stay</span></li>
+                    </ul>
+                    <a href="https://buy.stripe.com/dRm8wQ28AaXR0Oi5B2ew80A" class="btn btn-secondary btn-pricing-main"
+                        rel="noopener noreferrer" target="_blank"
+                        aria-label="Book Program plus Concierge retreat for 4,000 US dollars">Book Concierge — $4,000</a>
+                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe</p>
+                </div>
+
                 <div class="pricing-card animate-on-scroll delay-100">
                     <span class="pricing-tier-label">Essential</span>
                     <h3 class="package-name">Shared Room</h3>
-                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$12,500</span></p>
-                    <p class="package-diff">Shared luxury room · Full program access · Visa guidance resources</p>
-                    <p class="package-note">Everything in the group experience with twin / shared accommodation.</p>
+                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$13,000</span></p>
+                    <p class="package-diff">Shared luxury room · Full program · Visa guidance</p>
+                    <p class="package-note">The group experience with twin / shared accommodation.</p>
                     <ul class="package-features">
                         <li><i class="fas fa-check" aria-hidden="true"></i><span>7‑day program, masterminds &amp; strategy sessions</span></li>
                         <li><i class="fas fa-check" aria-hidden="true"></i><span>Shared luxury room (twin / shared arrangement)</span></li>
@@ -277,16 +314,16 @@
                     </ul>
                     <a href="https://buy.stripe.com/bJe00k9B23vp68C9Riew802" class="btn btn-secondary btn-pricing-main"
                         rel="noopener noreferrer" target="_blank"
-                        aria-label="Book Shared Room retreat for 12,500 US dollars">Book Shared — $12,500</a>
-                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe · Cards &amp; more</p>
+                        aria-label="Book Shared Room retreat for 13,000 US dollars">Book Shared — $13,000</a>
+                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe</p>
                 </div>
 
                 <div class="pricing-card featured animate-on-scroll delay-200">
-                    <div class="pricing-ribbon">Best value</div>
+                    <div class="pricing-ribbon">Premium</div>
                     <span class="pricing-tier-label">Premium</span>
                     <h3 class="package-name">Private Room</h3>
-                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$15,000</span></p>
-                    <p class="package-diff">Private room · Hands‑on visa support · Concierge before &amp; during the trip</p>
+                    <p class="package-price"><span class="package-currency">USD</span> <span class="package-amount">$16,000</span></p>
+                    <p class="package-diff">Private room · Visa support · Concierge before &amp; during</p>
                     <p class="package-note">Everything in Shared, plus privacy and elevated support.</p>
                     <ul class="package-features">
                         <li><i class="fas fa-check" aria-hidden="true"></i><span><strong>Everything in Shared Room</strong></span></li>
@@ -296,8 +333,8 @@
                     </ul>
                     <a href="https://buy.stripe.com/7sYeVe00sd5ZdB45B2ew803" class="btn btn-primary btn-pricing-main"
                         rel="noopener noreferrer" target="_blank"
-                        aria-label="Book Private Room retreat for 15,000 US dollars">Book Private — $15,000</a>
-                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe · Cards &amp; more</p>
+                        aria-label="Book Private Room retreat for 16,000 US dollars">Book Private — $16,000</a>
+                    <p class="pricing-secure"><i class="fas fa-shield-halved" aria-hidden="true"></i> Encrypted checkout · Stripe</p>
                 </div>
             </div>
         </div>
@@ -373,8 +410,10 @@
                 <ul class="need-to-know-list">
                     <li><strong>Event</strong> — Billionaire Habits Retreat — Japan Edition, hosted by the Stephen Akintayo Foundation.</li>
                     <li><strong>Dates</strong> — 24th – 30th November 2026 (Tokyo → Kyoto → Osaka).</li>
-                    <li><strong>Shared Room ($12,500)</strong> — twin/shared luxury room, full program, visa guidance resources.</li>
-                    <li><strong>Private Room ($15,000)</strong> — single occupancy, hands‑on visa support, and concierge help before and during the trip.</li>
+                    <li><strong>Program Only ($3,000)</strong> — full 7‑day program; you arrange your own hotel.</li>
+                    <li><strong>Program + Concierge ($4,000)</strong> — program plus visa support and concierge; you arrange your own hotel.</li>
+                    <li><strong>Shared Room ($13,000)</strong> — twin/shared luxury room, full program, visa guidance resources.</li>
+                    <li><strong>Private Room ($16,000)</strong> — single occupancy, hands‑on visa support, and concierge help before and during the trip.</li>
                     <li><strong>You pay separately</strong> — international flights, visa/embassy fees, personal expenses, and mandatory travel insurance.</li>
                     <li><strong>Cohort size</strong> — capped at 25 participants; seats are allocated in order of booking via secure Stripe checkout.</li>
                     <li><strong>Travel flow</strong> — typically arrive Tokyo (HND/NRT) and depart Osaka (KIX); detailed guidance follows booking.</li>
@@ -391,29 +430,31 @@
                         <a href="https://www.stephenakintayo.com/japanretreat" rel="noopener noreferrer" target="_blank">www.stephenakintayo.com/japanretreat</a>.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">What’s the difference between Shared and Private? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Both include the full 7‑day program, meals as listed, transport in Japan, tours,
-                        and masterminds. Shared Room ($12,500) is twin/shared accommodation with visa guidance resources.
-                        Private Room ($15,000) upgrades you to a private room, hands‑on visa documentation support, and
-                        concierge‑level help before and during the trip. Embassy and government fees are always paid by you.</div>
+                    <div class="faq-question">What’s the difference between the four packages? <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer">All four include the 7‑day program, tours, and masterminds.
+                        <strong>Program Only ($3,000)</strong> is sessions and tours — you book your own hotel.
+                        <strong>Program + Concierge ($4,000)</strong> adds visa support and concierge help; hotel still not included.
+                        <strong>Shared Room ($13,000)</strong> adds twin/shared luxury accommodation, breakfast, selected dinners, and group transport.
+                        <strong>Private Room ($16,000)</strong> upgrades to a private room, hands‑on visa support, and concierge help.
+                        Embassy and government fees are always paid by you.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Do I need a visa to enter Japan? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Most international guests need a visa. Shared Room includes guidance resources;
-                        Private Room adds hands‑on visa support. Government and embassy fees are paid by you
-                        where applicable.</div>
+                    <div class="faq-answer">Most international guests need a visa. Program Only and Shared Room include
+                        guidance resources; Program + Concierge and Private Room add hands‑on visa support. Government
+                        and embassy fees are paid by you where applicable.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do I book? <i class="fas fa-chevron-down"></i></div>
-                    <div class="faq-answer">Choose Shared Room ($12,500) or Private Room ($15,000) and complete checkout via
-                        the secure Stripe links in the pricing section — each option has its own payment link. Seats are
-                        confirmed in order of successful booking (25 max).</div>
+                    <div class="faq-answer">Choose one of the four packages and complete checkout via its Stripe link in the
+                        pricing section. Seats are confirmed in order of successful booking (25 max).</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">What is not included in the price? <i class="fas fa-chevron-down"></i></div>
                     <div class="faq-answer">International flights to/from Japan, visa processing and embassy fees, personal
-                        expenses, and travel insurance (mandatory). Everything else in the program — accommodation per
-                        package, breakfast, selected dinners, bullet trains, group transport, tours, and sessions — is included.</div>
+                        expenses, and travel insurance (mandatory). Program Only and Program + Concierge also do not include
+                        hotel. Shared Room and Private Room include accommodation, breakfast, selected dinners, bullet trains,
+                        group transport, tours, and sessions.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Is this retreat suitable for couples? <i class="fas fa-chevron-down"></i>
@@ -446,13 +487,17 @@
     <section id="apply" class="final-cta section-padding">
         <div class="container animate-on-scroll">
             <h2 class="section-title">Ready to <span>Reserve Your Seat?</span></h2>
-            <p class="final-cta-lead">Billionaire Habits Retreat — Japan Edition · 24th – 30th Nov 2026. Choose your tier and complete secure checkout in minutes.</p>
+            <p class="final-cta-lead">Billionaire Habits Retreat — Japan Edition · 24th – 30th Nov 2026. Four packages. Secure checkout in minutes.</p>
 
-            <div class="final-cta-buttons">
+            <div class="final-cta-grid">
+                <a href="https://buy.stripe.com/fZu7sM5kMaXRcx01kMew80B" class="btn btn-secondary" rel="noopener noreferrer"
+                    target="_blank">Program — $3,000</a>
+                <a href="https://buy.stripe.com/dRm8wQ28AaXR0Oi5B2ew80A" class="btn btn-secondary" rel="noopener noreferrer"
+                    target="_blank">Concierge — $4,000</a>
                 <a href="https://buy.stripe.com/bJe00k9B23vp68C9Riew802" class="btn btn-secondary" rel="noopener noreferrer"
-                    target="_blank">Book Shared — $12,500</a>
+                    target="_blank">Shared Room — $13,000</a>
                 <a href="https://buy.stripe.com/7sYeVe00sd5ZdB45B2ew803" class="btn btn-primary" rel="noopener noreferrer"
-                    target="_blank">Book Private — $15,000</a>
+                    target="_blank">Private Room — $16,000</a>
             </div>
 
             <p class="final-cta-footnote"><i class="fas fa-users" aria-hidden="true"></i> Capped at 25 participants · <i class="fas fa-lock" aria-hidden="true"></i> Secure Stripe checkout · Hosted by Dr. Stephen Akintayo, Founder SACI Holdings</p>
