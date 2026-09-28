@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const copyrightYear = document.getElementById('copyright-year');
+    if (copyrightYear) copyrightYear.textContent = String(new Date().getFullYear());
+
     const navbar = document.querySelector('.navbar');
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
