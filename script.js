@@ -55,6 +55,67 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', onScroll, { passive: true });
     }
 
+    // Terms & Conditions gate: every Stripe checkout link must be agreed to first
+    const termsModal = document.getElementById('terms-modal');
+    if (termsModal && typeof termsModal.showModal === 'function') {
+        const agreeBox = document.getElementById('terms-agree-checkbox');
+        const proceedBtn = document.getElementById('terms-proceed');
+        const packageLine = document.getElementById('terms-package');
+        const termsBody = termsModal.querySelector('.terms-body');
+        let pendingCheckoutUrl = null;
+
+        const openTerms = (checkoutUrl, packageLabel) => {
+            pendingCheckoutUrl = checkoutUrl;
+            agreeBox.checked = false;
+            proceedBtn.disabled = true;
+            termsModal.classList.toggle('view-only', !checkoutUrl);
+            packageLine.hidden = !packageLabel;
+            packageLine.textContent = packageLabel ? `Selected: ${packageLabel}` : '';
+            if (termsBody) termsBody.scrollTop = 0;
+            closeMobileMenu();
+            termsModal.showModal();
+        };
+
+        const closeTerms = () => {
+            pendingCheckoutUrl = null;
+            termsModal.close();
+        };
+
+        document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openTerms(link.href, link.textContent.trim());
+            });
+        });
+
+        document.querySelectorAll('.terms-open-link').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                openTerms(null, null);
+            });
+        });
+
+        agreeBox.addEventListener('change', () => {
+            proceedBtn.disabled = !agreeBox.checked;
+        });
+
+        proceedBtn.addEventListener('click', () => {
+            if (!agreeBox.checked || !pendingCheckoutUrl) return;
+            window.open(pendingCheckoutUrl, '_blank', 'noopener');
+            closeTerms();
+        });
+
+        termsModal.querySelectorAll('.terms-close, .terms-cancel').forEach((btn) => {
+            btn.addEventListener('click', closeTerms);
+        });
+
+        // Click on the backdrop closes the dialog
+        termsModal.addEventListener('click', (e) => {
+            if (e.target === termsModal) closeTerms();
+        });
+    }
+
     // Smooth scrolling for in-page anchors only (avoids breaking #top / empty hash)
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
